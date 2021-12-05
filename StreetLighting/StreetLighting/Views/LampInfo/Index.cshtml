@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Информация о лампах";
+}
+
+@model StreetLighting.Models.ViewModels.SearchLuminareViewModel
+
+<div class="container" style="margin-top: 150px">
+    <div class="row">
+        <form class="group-form" asp-action="Search">
+            <label asp-for="StreetName" class="control-label"></label>
+            <input asp-for="StreetName" class="form-control" />
+            <input type="submit" class="btn bg-warning" />
+        </form>
+    </div>
+</div>

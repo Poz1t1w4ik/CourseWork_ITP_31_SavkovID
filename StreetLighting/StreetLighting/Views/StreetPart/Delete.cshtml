@@ -1,0 +1,41 @@
+﻿@model StreetLighting.Models.Entities.StreetPart
+
+@{ ViewData["Title"] = "Удаление"; }
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StreetId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StreetId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StartBuilding)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartBuilding)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndBuilding)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndBuilding)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <div class="col">
+            <input type="submit" value="Удалить" class="btn btn-warning row m-1" />
+            <a asp-action="Index" class="row m-1">Назад</a>
+        </div>
+    </form>
+</div>

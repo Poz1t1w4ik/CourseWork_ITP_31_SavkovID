@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Домашняя";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col align-items-center" style="margin-top: 150px">
+            <form>
+                <div class="col p-1">
+                    <div class="row m-2">
+                        <input asp-action="LuminareInfo" type="submit" class="btn bg-warning" value="Информация по светильникам" />
+                    </div>
+                    <div class="row m-2">
+                        <input asp-action="LampInfo" type="submit" class="btn bg-warning" value="Информация по лампам" />
+                    </div>
+                    <div class="row m-2">
+                        <input asp-action="DurationInfo" type="submit" class="btn bg-warning" value="Информация по выходу из строя" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

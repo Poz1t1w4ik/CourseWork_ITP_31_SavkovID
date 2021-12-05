@@ -1,0 +1,38 @@
+﻿@model StreetLighting.Models.Entities.SiteLighting
+
+@{ ViewData["Title"] = "Обновление"; }
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Update" asp-route-id="@Model.Id">
+            <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+            <div class="form-group">
+                <label asp-for="LuminareId" class="control-label"></label>
+                <input asp-for="LuminareId" class="form-control" />
+                <span asp-validation-for="LuminareId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LuminareCount" class="control-label"></label>
+                <input asp-for="LuminareCount" class="form-control" />
+                <span asp-validation-for="LuminareCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetPartId" class="control-label"></label>
+                <input asp-for="StreetPartId" class="form-control" />
+                <span asp-validation-for="StreetPartId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary bg-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

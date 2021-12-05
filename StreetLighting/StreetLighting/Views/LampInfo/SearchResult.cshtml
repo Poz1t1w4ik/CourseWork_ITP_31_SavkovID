@@ -1,0 +1,64 @@
+﻿@model IEnumerable<StreetLighting.Models.ViewModels.LampInfoViewModel>
+
+@{ ViewData["Title"] = "Результат"; }
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div>
+                <div>
+                    <span>Результат поиска</span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead class="bg-warning text-black">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StreetName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LuminareId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Power)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Duration)
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-bordered border-dark">
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.StreetName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.LuminareId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Power)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Duration)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StreetLighting.Models.Entities.Lamp>
+
+@{ ViewData["Title"] = "Лампы"; }
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div>
+                <form asp-controller="Lamp" asp-action="Index" method="post">
+                    <p>
+                        Тип: <input type="text" name="search" />
+                        <input type="submit" value="Поиск" class="btn bg-warning" />
+                    </p>
+                </form>
+                <div>
+                    <a asp-controller="Lamp" asp-action="Create" class="btn bg-warning">
+                        <span>Добавить лампу</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead class="bg-warning text-black">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Power)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Duration)
+                    </th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody class="table-bordered border-dark">
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Power)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Duration)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-controller="Lamp" asp-route-id="@item.Id" class="btn bg-dark p-1 text-white">Редактирование</a>
+                        <a asp-action="Delete" asp-controller="Lamp" asp-route-id="@item.Id" class="btn bg-dark p-1 text-white">Удаление</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

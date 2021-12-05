@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Информация о сроках";
+}
+
+@model StreetLighting.Models.ViewModels.SearchLuminareViewModel
+
+<div class="container" style="margin-top: 150px">
+    <div class="row">
+        <form class="group-form" asp-action="Search">
+            <label asp-for="StreetName" class="control-label m-1"></label>
+            <input asp-for="StreetName" class="form-control m-1" />
+            <label asp-for="Start" class="control-label m-1"></label>
+            <input asp-for="Start" class="form-control m-1" />
+            <label asp-for="End" class="control-label m-1"></label>
+            <input asp-for="End" class="form-control m-1" />
+            <input type="submit" class="btn bg-warning m-1" />
+        </form>
+    </div>
+</div>
